@@ -29,7 +29,6 @@ import br.com.sociallogin.social.ConnectionSignUpImpl;
 
 @Configuration
 @EnableSocial
-// Load to Environment.
 @PropertySource("classpath:social-cfg.properties")
 public class SocialConfig implements SocialConfigurer {
  
@@ -55,8 +54,6 @@ public class SocialConfig implements SocialConfigurer {
         TwitterConnectionFactory tfactory = new TwitterConnectionFactory(//
                 env.getProperty("twitter.consumer.key"), //
                 env.getProperty("twitter.consumer.secret"));
- 
-        // tfactory.setScope(env.getProperty("twitter.scope"));
  
         cfConfig.addConnectionFactory(tfactory);
  
